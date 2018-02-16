@@ -64,3 +64,6 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
+
+#Normalize class
+gem 'normalize-rails'
