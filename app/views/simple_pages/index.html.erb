@@ -5,9 +5,49 @@
 
 <%# Home page carousel%>
 
-<div class="background-image">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @products.each do |product| %>
+    <div class="item<%= " active" if product == @products.first %>">
+      <%= image_tag(product.name image_url) %>
+      <alt="Red City Bike" img src="http://myapp.com/img/red_city_bike.JPG"/>
+      <div class="carousel-caption">
+        <%= product.name %>
+        <p>Red City Bike</p>
+      </div>
+    </div>
+    <div class="item">
+      <alt="Red City Bike" img src="http://myapp.com/img/blue_cruiser.JPG" />
+      <div class="carousel-caption">
+        <p>Blue City Bike</p>
+      </div>
+    </div>
+    <% end %>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!--<div class="background-image">
   <%= image_tag("bicycle-789648_1280.jpg", class:"img-responsive") %>
-  </div><!--image-->
-</div><!--index page-->
+</div><!--image-->-->
+<!--</div>index page-->
 <%# test_variable = 42 %>
 <%# test_variable %>

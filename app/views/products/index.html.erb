@@ -38,8 +38,11 @@
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
+    <%= render @products %>
       <div class="col-sm-2 col-md-4">
-        <%= product.image_url %>
+        <% if product.image_url.present? %>
+        <%= image_tag(product.image_url, class: 'image-responsive') %>
+        <% end %>
       <a href="#"><h1><%= product.name %></h1></a>
       <p><%= product.description %></p>
       <p><%= product.price %></p><br>

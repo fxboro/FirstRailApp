@@ -1,2 +1,6 @@
 <h2>Featured Product:</h2>
 <%= @featured_product.name %>
+
+def landing_page
+  @products = Products.limit(3)
+end
