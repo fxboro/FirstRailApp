@@ -1,15 +1,41 @@
 // Place all the styles related to the simple_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// NAVIGATION
+.navbar{
+  background-color: #252937;
+  margin-top: 0;
+  border-radius: 10px;
+
+}
+#form-button{
+  float: right;
+}
+
+// INDEX page
+#index-paragraph{
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+// FOOTER
+#site-footer {
+  background-color: #252937;
+  font-size: 1em;
+  background-size: auto;
+  height: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 10px;
+
+}
 .h1{
   font-family: arial, helvetica, serif;
   text-align: center;
 }
-.background-image{
+.background-image {
   width: 100%;
-  margin-left: 10px;
+  margin-left: 0;
 }
-
-#index-body header{
-  margin: auto;
-}
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/

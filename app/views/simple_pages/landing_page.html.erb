@@ -1,4 +1,4 @@
-<h2>Featured Product:</h2>
+<h2 id="headline">Featured Product</h2>
 
 <div id="carousel-example-generic" class="carousel slide container-fluid" data-ride="carousel">
   <!-- Indicators -->
@@ -11,16 +11,16 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
       <% @products.each do |product| %>
-    <div class="item<%= " active" if product == @products.first %>">
-      <% if product.image_url.present? %>
-      <%= image_tag(product.image_url, class:"img-responsive img-carousel-center") %>
+        <div class="item<%= " active" if product == @products.first %>">
+          <% if product.image_url.present? %>
+            <%= link_to image_tag(product.image_url, class:"img-responsive img-carousel-center"), product %>
       <% end %>
-        <div class="carousel-caption">
-              <h5><%= product.name %></h5>
-         </div>
-       </div>
-       <% end -%>
-    </div>
+      <div class="carousel-caption">
+              <h5><%= link_to product.name, product %></h5>
+            </div>
+          </div>
+        <% end -%>
+      </div>
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
