@@ -17,6 +17,14 @@
   font-weight: bolder;
   font-size: 1em;
 }
+//carousel
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+    width: 100%;
+    height: 400px;
+    object-fit:scale-down;
+}
+
 
 // INDEX page
 #index-paragraph {
