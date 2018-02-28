@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'simple_pages/products'
 
+  post 'simple_pages/thank_you'
+
 
 
 
