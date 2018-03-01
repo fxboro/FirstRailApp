@@ -67,3 +67,6 @@ end
 
 #Normalize class
 gem 'normalize-rails'
+
+#devise
+gem 'devise'
