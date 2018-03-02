@@ -70,3 +70,5 @@ gem 'normalize-rails'
 
 #devise
 gem 'devise'
+
+gem 'cancancan', '~> 1.10'

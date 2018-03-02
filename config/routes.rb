@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+devise_for :users, path:'', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { registrations: "user_registration" }
+
+
   resources :users
   resources :products
+
+  resources :orders, only:[:index, :show, :create, :destroy]
   get 'simple_pages/about'
 
   get 'simple_pages/contact'
@@ -20,8 +24,8 @@ Rails.application.routes.draw do
 
   root  'simple_pages#landing_page'
 
-  resources :orders, only: [:index, :show, :create, :destroy]
 
+  root 'admin/users#show'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
