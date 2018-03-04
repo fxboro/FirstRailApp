@@ -6,8 +6,13 @@ class Product < ApplicationRecord
   # end
 #end
 
+  has_many :comments
 
   def self.search(search_term)
     Product.where("name LIKE ?", "%#{search_term}%")
   end
+end
+
+def highest_rating_comment
+  comments.rating_desc.first
 end
