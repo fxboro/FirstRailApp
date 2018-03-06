@@ -72,3 +72,11 @@ gem 'normalize-rails'
 gem 'devise'
 
 gem 'cancancan', '~> 1.10'
+
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
+#if Bundler::WINDOWS
+  #gem 'bcrypt-ruby', '~> 3.0.0', require: false
+#else
+  #gem 'bcrypt', '~> 3.1.10', require: false
+#end
