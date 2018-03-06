@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-end
+
 
   def create
     @product = Product.find(params[:product_id])
