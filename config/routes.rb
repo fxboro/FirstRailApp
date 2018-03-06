@@ -25,7 +25,7 @@ devise_for :users, path:'', path_names: { sign_in: 'login', sign_out: 'logout' }
 
   post 'simple_pages/thank_you'
 
-  root 'admin/users#show'
+  get 'admin/users#show'
 
 
 
