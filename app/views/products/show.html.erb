@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -46,4 +46,65 @@
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 <%= render 'new_comment' %>
-<%= render 'comments' %>
+<%= render 'comments' %>-->
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+
+  <div class="row">
+    <!--<div class="col-sm-6 col-md-4">-->
+      <div class="thumbnail">
+
+          <%= image_tag @product.image_url, class: 'img-responsive' %>
+
+        <div class="caption">
+          <p>
+            <strong>Name:</strong>
+            <%= @product.name %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>
+            <%= @product.description %>
+          </p>
+
+          <p>
+            <strong>Colour:</strong>
+            <%= @product.colour %>
+          </p>
+
+          <p>
+            <strong>Price:</strong>
+            <%= @product.price %>
+          </p>
+
+          <p>Average Rating: <div class="rated stars" data-score="<%= @product.average_rating %>"></div> </p>
+
+          <% if signed_in? %>
+              <h4>Add a review:</h4>
+              <%= form_for([@product, @product.comments.build]) do |f| %>
+                  <p>
+                    <%= f.label :body, "Comments" %><br>
+                    <%= f.text_area :body %>
+                  </p>
+
+                  <p>
+                  <div class="rating"></div>
+                  </p>
+
+                  <p>
+                    <%= f.submit "Submit" %>
+                  </p>
+              <% end %>
+          <% end %>
+
+          <%= render 'comments' %>
+
+
+        </div>
+      <!--</div>-->
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+
+</div>
