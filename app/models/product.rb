@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+    validates :name, presence: true
+ end
 
 #def self.search(search_term)
   # like_string = Rails.env.production? ? "ilike" : "LIKE"
