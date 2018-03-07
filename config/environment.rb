@@ -15,8 +15,3 @@ ActionMailer::Base.smtp_settings = {
   domain: 'heroku.com',
   enable_starttls_auto: true
 }
-
-## Rails 2.1 - 2.3: environment.rb
-Rails::Initializer.run do |config|
-  config.gem 'will_paginate', :version => '~> 2.3.16'
-end
