@@ -1,21 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1 id="headline">Products</h1>
-
-<%= will_paginate @products %>
-
-    <div class="row">
-    <%= render @products %>
-  </div>
-
+<h1>Products</h1>
 <br>
 
-<%= will_paginate @products %>
+<div class="row">
+  <% cache(cache_key_for_products) do %>
+    <%= render @products %>
+  <% end %>
+</div>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
 
-
-
-<!--<%= link_to 'Back', products_path %>-->
+<br>
+<%= link_to 'Back', products_path %>
