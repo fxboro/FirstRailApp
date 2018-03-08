@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 id="headline">Products</h1>
+<%= will_paginate @products %>
   <div class="container-fluid" id="catalog">
     <div class="row">
     <%= render @products %>
@@ -10,4 +11,6 @@
 
 <%= link_to 'New Product', new_product_path %>
 
-<%= link_to 'Back', products_path %>
+<%= will_paginate @ products %>
+
+<!--<%= link_to 'Back', products_path %>-->

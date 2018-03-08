@@ -7,12 +7,14 @@ class UsersController < ApplicationController
   # GET /users.json
 
   def index
-    if current_user.admin?
-      @users = User.all.page(params[:page]).per_page(10)
-    else
-      redirect_to :root, notice: 'The page you tried to reach is for admin only.'
+    #if current_user.admin?
+    @users = User.all.page(params[:page]).per_page(10)
+    #else
+    redirect_to :root, notice: 'The page you tried to reach is for admin only.'
     end
-  end
+  #end
+
+
 
   # GET /users
   # GET /users.json
