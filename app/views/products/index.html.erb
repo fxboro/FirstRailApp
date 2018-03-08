@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-<br>
+<%= render 'form', product: @product %>
 
-<div class="row">
+
+<div class= "admin-links links-to-pages">
+  <%= link_to 'Back', products_path %>
+</div>
+
+
+<!--<div class="row">
   <% cache(cache_key_for_products) do %>
     <%= render @products %>
   <% end %>
@@ -14,4 +20,4 @@
 <%= link_to 'New Product', new_product_path %>
 
 <br>
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path %>-->
