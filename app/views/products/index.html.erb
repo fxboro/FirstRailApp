@@ -4,8 +4,10 @@
 
     <%= will_paginate @products %>
 
+    <br>
+
     <% cache(cache_key_for_products) do %>
-        <%= render @product %>
+        <%= render @products %>
       <% end %>
 
 
