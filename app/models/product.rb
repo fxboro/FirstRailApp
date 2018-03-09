@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
     validates :name, presence: true
-
+    has_many :orders
+    has_many :comments
 
 #def self.search(search_term)
   # like_string = Rails.env.production? ? "ilike" : "LIKE"
@@ -8,7 +9,7 @@ class Product < ApplicationRecord
   # end
 #end
 
-  has_many :comments
+
 
   def self.search(search_term)
     if Rails.env.development?

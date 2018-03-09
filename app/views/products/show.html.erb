@@ -73,7 +73,7 @@
           </p>
 
           <p>
-            <strong>Price:</strong>
+            <strong>Price:$</strong>
             <%= @product.price %>
           </p>
 
@@ -98,6 +98,10 @@
           <% end %>
 
           <%= render 'comments' %>
+
+          <div class="pages col-sm-12">
+            <%= will_paginate @comments %>
+          </div>
 
 
         </div>
