@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Product do
 
   before do
-      @product = Product.create(name: "Race Bike", description: "nice", color: "red", price: 99)
+      @product = Product.create!(name: "Race Bike", description: "nice", color: "red", price: 99)
       @user = Use.create(first_name: "Chima", last_name: "Ohiagbaji", email: "user@gmail.com", password: "123abc")
       product.comments.create!(rating: 1, user: user, body: "Awful bike!")
       product.comments.create!(rating: 3, user: user, body: "Ok bike!")
