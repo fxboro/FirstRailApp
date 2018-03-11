@@ -1,20 +1,22 @@
-require 'rails_helper'
+require 'rails_helper' # also requires spec_helper and adds other stuff - if didnt need Rails just use spec_helper but unlikely
 
 describe Product do
 
-  before do
-      @product = Product.create!(name: "Race Bike", description: "nice", color: "red", price: 99)
-      @user = Use.create(first_name: "Chima", last_name: "Ohiagbaji", email: "user@gmail.com", password: "123abc")
-      product.comments.create!(rating: 1, user: user, body: "Awful bike!")
-      product.comments.create!(rating: 3, user: user, body: "Ok bike!")
-      product.comments.create!(rating: 5, user: user, body: "Great bike!")
-    end
+  #describe "#average_rating" do # - the '#' signifies that we are testing an instance method - describe the method you will be testing (which belongs to the Class)
 
-    it "returns the average rating of the comments" do
-      expect(@product.average_rating).to eq 3
- end
+    #context 1, test 1
+    context "when the product has comments" do # create context
+      before do # before running the test...
+        @product = Product.create!(:name => "Atlas Bike")
+        @user = User.create(:email => "123@123.com", :password => "12345678" )
+        @product.comments.create!(:rating => 4, :user => @user, :body => "Great Bike")
+        @product.comments.create!(:rating => 5, :user => @user, :body => "Awesome Bike")
+        @product.comments.create!(:rating => 5, :user => @user, :body => "Fantastic Bike")
+        @product.comments.create!(:rating => 2, :user => @user, :body => "not so fantastic")
+      end
 
-      it "is not valid without a name" do
-      expect(Product.new(description: "Nice bike")).not_to be_valid
+      it 'returns the average rating of all comments' do
+        expect(@product.average_rating).to eq 4
+      end
     end
-end
+  end

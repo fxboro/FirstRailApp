@@ -64,6 +64,8 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rails-controller-testing'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 #Normalize class
@@ -79,8 +81,6 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
-#Functional test
-gem 'rails-controller-testing'
 
 #if Bundler::WINDOWS
   #gem 'bcrypt-ruby', '~> 3.0.0', require: false

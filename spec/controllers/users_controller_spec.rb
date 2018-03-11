@@ -1,20 +1,21 @@
 require 'rails_helper'
 
-describe UsersController, :type => :controller do
+describe UsersController, type: :controller do
 
   before do
-    @user = User.create!(first_name: "Tresor", last_name: "Mbo", email: "tresor@example.com", password: "1234567")
-    @user2 = User.create!(first_name: "Tresor", last_name: "Mbo", email: "tresor@example.com", password: "1234567")
+    #@user1 = FactoryGirl.create(:user)
+    @user = User.create!(first_name: "Jonny", last_name: "Gallen", email: "jong@gmail.com", password: "567891", admin: true)
   end
 
   describe "GET #show" do
-     context "User is logged in" do
+     context "when user is logged in" do
        before do
          sign_in @user
        end
 
        it "loads the correct user details" do
-         get :show, id: @user.id
+         #get :show, id: @user.id
+         get :show, params: { id: @user1.id }
          expect(response.status).to eq 200
          expect(assigns(:user)).to eq @user
        end
@@ -25,13 +26,6 @@ describe UsersController, :type => :controller do
          expect(response).to redirect_to(root_path)
        end
      end
+   end
 
-     context "No user is logged in" do
-       it "redirects to login" do
-         get :show, id: @user.id
-         expect(response).to redirect_to(root_path)
-       end
-     end
   end
-
-end
