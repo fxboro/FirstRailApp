@@ -4,7 +4,7 @@
       def initialize(user)
         user ||= User.new #guest user (not logged in)
         if user.admin?
-          can :destroy, :manage, :all
+          can [:destroy, :manage], :all
         else
           can :manage, User, id: user.id
           cannot :destroy, :all

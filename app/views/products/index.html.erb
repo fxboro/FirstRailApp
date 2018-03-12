@@ -1,13 +1,13 @@
-  <p id="notice"><%= notice %></p>
-
-  <h1>Products</h1>
+<h1>Products</h1>
 
   <%= will_paginate @products %>
 
   <br>
 
   <% cache(cache_key_for_products) do %>
+    <div class="row">
       <%= render @products %>
+    </div>
   <% end %>
 
 
