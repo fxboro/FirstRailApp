@@ -46,6 +46,7 @@ GEM
       tzinfo (~> 1.1)
     arel (8.0.0)
     bindex (0.5.0)
+    brakeman (4.2.0)
     builder (3.2.3)
     byebug (10.0.0)
     cancancan (1.17.0)
@@ -210,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt!
+  brakeman
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)

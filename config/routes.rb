@@ -21,7 +21,7 @@ devise_for :users, :path =>'', :path_names => { :sign_in => 'login', :sign_out =
 
   get 'simple_pages/landing_page'
 
-  get 'simple_pages/products'
+  post 'payments/create'
 
   post 'simple_pages/thank_you'
 

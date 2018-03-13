@@ -84,6 +84,9 @@ gem 'will_paginate', '~> 3.1.0'
 ## Stripe Card Payment
 gem 'stripe'
 
+## Brakeman
+gem 'brakeman'
+
 
 #if Bundler::WINDOWS
   #gem 'bcrypt-ruby', '~> 3.0.0', require: false
