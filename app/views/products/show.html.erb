@@ -1,8 +1,8 @@
 <div class="row">
     <div class="thumbnail">
-
-      <%= image_tag @product.image_url, class: 'img-responsive' %>
-
+      <% if @product.product_image.present? %>
+      <%= image_tag @product.product_image.url, class: "img_zoom img-responsive", data_zoom_image: "@product.product_image.url" %>
+      <% end %>
     <div class="col-md-4">
           <p>
             <%= @product.name %>
