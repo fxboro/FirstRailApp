@@ -11,6 +11,7 @@ describe UsersController, type: :controller do
        before do
          sign_in @user
        end
+     end 
 
        it "loads the correct user details" do
           get :show, params: { id: @user1.id }
@@ -24,6 +25,7 @@ describe UsersController, type: :controller do
          expect(response).to redirect_to(root_path)
        end
      end
+
    end
 
-  end
+ end
