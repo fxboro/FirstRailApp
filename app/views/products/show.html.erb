@@ -1,8 +1,11 @@
 <div class="row">
     <div class="thumbnail">
+      <% cache @product do %>
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
 
       <% if @product.image_url.present? %>
-      <%= image_tag @product.image_url, class: "img_zoom img-responsive", data_zoom_image: "@product.image_url" %>
+      <%= image_tag @product.image_url, width: "350", class: "img_zoom img-responsive", data_zoom_image: "@product.image_url" %>
       <% end %>
     <div class="col-md-4">
           <p>
@@ -55,5 +58,4 @@
           </div>
     </div>
   </div>
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+<% end %>
