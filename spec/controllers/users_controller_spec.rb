@@ -3,29 +3,36 @@ require 'rails_helper'
 describe UsersController, type: :controller do
 
   before do
-    let(:user){ FactoryGirl.create(:user) }
-    let(:user2){ FactoryGirl.create(:user) }
+    @user =  FactoryBot.create(:user)
+    @user2 = FactoryBot.create(:user)
+
+  end
 
     describe "GET #show" do
-     context "when user is logged in" do
+
+     context "user is logged in" do
        before do
          sign_in @user
        end
-     end 
 
-       it "loads the correct user details" do
-          get :show, params: { id: @user1.id }
-          expect(response.status).to eq 200
+
+       it "loads correct user details" do
+          get :show, params: { id: @user.id }
           expect(assigns(:user)).to eq @user
-       end
+				  expect(response).to have_http_status(200)
+        end
+    end
 
-       it "doesn't load the second user" do
-         get :show, id: @user2.id
-         expect(response.status).to eq 302
-         expect(response).to redirect_to(root_path)
-       end
+       context "user cannot see other user show page" do
+			       before do
+				            sign_in @user2
+			     end
+
+		  it "redirects to root path" do
+			     get :show, params: { id: @user.id }
+			     expect(response).to redirect_to(root_path)
+          end
      end
-
    end
 
  end

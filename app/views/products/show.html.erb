@@ -8,21 +8,13 @@
       <%= image_tag @product.image_url, width: "350", class: "img_zoom img-responsive", data_zoom_image: "@product.image_url" %>
       <% end %>
     <div class="col-md-4">
-          <p>
-            <%= @product.name %>
-          </p>
+      <% cache @product do %>
+          <h2><%= @product.name %></h2>
+          <p><%= @product.description %></p>
+      <% end %>
+          <p><strong>Colour:</strong> <%= @product.colour %></p>
 
-          <p>
-            <%= @product.description %>
-          </p>
-
-          <p>
-            <strong>Colour:</strong> <%= @product.colour %>
-          </p>
-
-          <p>
-            <strong>Price:$</strong><%= @product.price %>
-          </p>
+          <p><strong>Price:$</strong><%= @product.price %></p>
 
           <%= form_tag("/payments/create", remote: true) do %>
 		        <%= render partial: "shared/stripe_checkout_button" %>
@@ -38,19 +30,15 @@
 
           <% if signed_in? %>
               <h4>Add a review:</h4>
-              <%= form_for([@product, @product.comments.build]) do |f| %>
+              <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
                   <p>
                     <%= f.label :body, "Comments" %><br>
                     <%= f.text_area :body %>
                   </p>
 
-                  <p>
-                  <div class="rating"></div>
-                  </p>
+                  <p><div class="rating"></div></p>
 
-                  <p>
-                    <%= f.submit "Submit" %>
-                  </p>
+                  <p><%= f.submit "Submit" %></p>
               <% end %>
           <% end %>
 

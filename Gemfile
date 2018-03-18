@@ -87,6 +87,9 @@ gem 'stripe'
 ## Brakeman
 gem 'brakeman'
 
+#MemCache
+gem 'dalli'
+
 
 #if Bundler::WINDOWS
   #gem 'bcrypt-ruby', '~> 3.0.0', require: false
