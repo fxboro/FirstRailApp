@@ -90,6 +90,9 @@ gem 'brakeman'
 #MemCache
 gem 'dalli'
 
+#redis
+gem 'redis-rails'
+
 
 #if Bundler::WINDOWS
   #gem 'bcrypt-ruby', '~> 3.0.0', require: false
