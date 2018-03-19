@@ -4,9 +4,13 @@
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
 
-      <% if @product.image_url.present? %>
+      <div class="row" data-product-id="<%= @product.id %>">
+	       <div class="col-md-4"><%= image_tag(@product.image_url, width: "350", class: "img-zoom img-responsive", data_zoom_image: @product.image_url) %>
+      </div>
+
+      <!--<% if @product.image_url.present? %>
       <%= image_tag @product.image_url, width: "350", class: "img_zoom img-responsive", data_zoom_image: "@product.image_url" %>
-      <% end %>
+      <% end %>-->
     <div class="col-md-4">
       <% cache @product do %>
           <h2><%= @product.name %></h2>
@@ -42,7 +46,6 @@
               <% end %>
           <% end %>
 
-          <%= render 'comments' %>
 
           <div class="pages col-sm-12">
             <%= will_paginate @comments %>
