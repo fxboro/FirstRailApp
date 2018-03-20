@@ -6,6 +6,5 @@ test:
 
 production:
   adapter: postgresql
-  url: postgres://mmajeovsqkhljn:2a5bb72a07219d5411546c6c91946f4e6ebfadd933b3f85c756cb03736140192@ec2
-  -184-73-199-189.compute-1.amazonaws.com:5432/d25vugajvjk9ro
-  channel_prefix: FirstRailApp_production
+  url: postgres://mmajeovsqkhljn:2a5bb72a07219d5411546c6c91946f4e6ebfadd933b3f85c756cb03736140192@ec2-184-73-199-189.compute-1.amazonaws.com:5432/d25vugajvjk9ro
+  channel_prefix: bikecologne_production
