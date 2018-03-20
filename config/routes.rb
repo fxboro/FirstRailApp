@@ -27,7 +27,7 @@ devise_for :users, :path =>'', :path_names => { :sign_in => 'login', :sign_out =
 
   #post 'admin/users#show'
 
-
+  mount ActionCable.server => '/cable'
 
 
   root  'simple_pages#landing_page'

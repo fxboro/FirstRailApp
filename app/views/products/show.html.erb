@@ -8,21 +8,19 @@
 	       <div class="col-md-4"><%= image_tag(@product.image_url, width: "350", class: "img-zoom img-responsive", data_zoom_image: @product.image_url) %>
       </div>
 
-      <!--<% if @product.image_url.present? %>
-      <%= image_tag @product.image_url, width: "350", class: "img_zoom img-responsive", data_zoom_image: "@product.image_url" %>
-      <% end %>-->
+
     <div class="col-md-4">
       <% cache @product do %>
           <h2><%= @product.name %></h2>
           <p><%= @product.description %></p>
       <% end %>
-          <p><strong>Colour:</strong> <%= @product.colour %></p>
+      <p><strong>Colour:</strong> <%= @product.colour %></p>
 
-          <p><strong>Price:$</strong><%= @product.price %></p>
+      <p><strong>Price:$</strong><%= @product.price %></p>
 
-          <%= form_tag("/payments/create") do %>
+      <%= form_tag("/payments/create") do %>
 		        <%= render partial: "shared/stripe_checkout_button" %>
-			         <%= hidden_field_tag(:product_id, @product.id) %>
+              <%= hidden_field_tag(:product_id, @product.id) %>
 		       <% end %>
 
 
@@ -43,6 +41,9 @@
           <% end %>
 
           <%= render @comments %>
+
+          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+          
           <div class="pages col-sm-12">
             <%= will_paginate @comments %>
           </div>
