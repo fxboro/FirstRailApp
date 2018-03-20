@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   # Product.where("name #{like_string} ?", "%#{search_term}%")
   # end
 #end
+      validates :name, :price, :image_url, :color, presence: true
 
 
 
@@ -30,5 +31,15 @@ class Product < ApplicationRecord
 
   def average_rating
     comments.average(:rating).to_f
+  end
+
+  def views
+    # this is equivalent to "GET product:1"
+    $redis.get("product:#{id}")
+  end
+
+  def viewed!
+    # this is equivalent to "INC product:1"
+    $redis.incr("product:#{id}")
   end
 end
