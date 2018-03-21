@@ -40,10 +40,14 @@
               <% end %>
           <% end %>
 
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+        
+        <div class="products-reviews">
           <%= render @comments %>
+        </div>
 
-          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-          
+
+
           <div class="pages col-sm-12">
             <%= will_paginate @comments %>
           </div>

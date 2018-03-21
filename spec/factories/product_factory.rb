@@ -4,7 +4,7 @@ FactoryBot.define do
 
   factory :product do
   	id
-  	name 					"mountain test bike"
+  	name 					"Atlas bike"
   	description 	"FactoryBot test description"
   	image_url 		"testbike.jpg"
   	colour 				"black"

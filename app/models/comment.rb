@@ -11,5 +11,5 @@ class Comment < ApplicationRecord
   scope :rating_desc, -> { order(rating: :desc) }
   scope :rating_asc, -> { order(rating: :asc) }
 
-  after_commit { CommentUpdateJob.perform_later(self, @user) }
+  after_commit { CommentUpdateJob.perform_later(self, user) }
 end

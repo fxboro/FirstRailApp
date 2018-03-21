@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   # Product.where("name #{like_string} ?", "%#{search_term}%")
   # end
 #end
-      validates :name, :price, :image_url, :color, presence: true
+      validates :name, :price, :image_url, :colour, presence: true
 
 
 
